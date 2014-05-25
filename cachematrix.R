@@ -7,7 +7,8 @@
 ## containg a function set of the matrix,x, get the matrix, setinverse (of 
 ## the matrix) and getinverse (of the matrix).
 
-makeCacheMatrix <- function(x = matrix()) { ## x is data
+makeCacheMatrix <- function(x = matrix()) { ## x is data. matrix (x)
+    ## is assumed square and invetible- not singular
     mtxinverse <- NULL
     setmatrix <- function(y){
                 x <<- y
@@ -38,7 +39,7 @@ cacheSolve <- function(x, ...) {
         return(mtxinverse)
     }
       mtx <- x$getmatrix()
-      mtxinverse <- solve(x)
+      mtxinverse <- solve(mtx)
       x$setinverse(mtxinverse)
       mtxinverse
     ## Return a matrix that is the inverse of 'x'
